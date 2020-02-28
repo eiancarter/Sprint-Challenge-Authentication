@@ -10,7 +10,7 @@ module.exports = (req, res, next) => {
 
   if (Authorization) {
     jwt.verify(Authorization, jwtSecret, (err, decodedToken) => {
-      if(err) {
+      if (err) {
         console.log(err)
         res.status(401).json({ you: 'shall not pass!' });
       } else {
